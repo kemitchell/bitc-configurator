@@ -1,0 +1,28 @@
+{
+	"name": "bitc-configurator",
+	"preferGlobal": true,
+	"version": "0.0.1",
+	"description": "BITC computer configuration utility",
+	"author": "Josh Oldenburg",
+	
+	"main": "./lib/api",
+	"bin": {
+		"bitc": "./bin/bitc.js",
+		"bitcd": "./bin/bitcd.js"
+	},
+	
+	"dependencies": {
+		"express": "3.4.x",
+		"jade": "1.1.x",
+		"optimist": "0.6.x"
+	},
+	
+	"scripts": {
+		"test": "echo \"Once upon a time, a developer was lazy and didn't write tests. The end.\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/SteinbrennerBlueHats/bitc-configurator"
+	},
+	"license": "GPLv3"
+}
