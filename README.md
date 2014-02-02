@@ -22,4 +22,4 @@ The computers will be completely isolated from the Internet so various restricti
 		- `--pass|--password`: specify the basic auth password
 	
 
-[BITC]: http://fixme.com
+[BITC]: http://example.com
