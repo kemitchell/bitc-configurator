@@ -10,10 +10,18 @@ The computers will be completely isolated from the Internet so various restricti
 
 **Warning**: this script *will* render all computers useless outside of the intranet. It is intended to be used on computers that are freshly formatted with Ubuntu and will be reformatted with another OS afterwards. The scripts do not affect the hardware, but the software is configured to where it would be a pain to reverse.
 
+## The Configuration
+Each client has the following options set:
+- The computer name - this cannot be change after the initial setup
+- The computer IP - this is dynamically set with DHCP, and does not change
+- Whether the computer is an admin computer - this gives the computer login access to all other computers, and access to the web interface
+- A username & password pair - the username should be created with the OS installer and the password will be set by the setup script. This is only used for `sudo`
+
 ## Commands
 - `bitc setup`: run the initial setup on the system. This is an interactive script.
 	- Flags:
 		- `--server`: set the machine up as the server
+		- `-y|--yes`: automatically answer yes to continuation prompts
 - `bitc login <computer-id>`: SSH into the specified computer. Note: this requires you to have the universal SSH key.
 - `bitcd`: run the webserver on the server machine.
 	- Flags:

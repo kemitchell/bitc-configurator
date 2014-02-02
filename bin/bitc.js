@@ -4,3 +4,7 @@
 // Released under the GPLv3 license. See LICENSE.txt for more info
 
 var api = require('../lib/api');
+var argv = require('commander')
+	.version(api.version)
+	.command('setup', 'Set up this computer for BITC')
+	.parse(process.argv);

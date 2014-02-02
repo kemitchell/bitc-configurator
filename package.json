@@ -8,13 +8,18 @@
 	"main": "./lib/api",
 	"bin": {
 		"bitc": "./bin/bitc.js",
-		"bitcd": "./bin/bitcd.js"
+		"bitcd": "./bin/bitcd.js",
+		"bitc-setup": "./bin/bitc-setup.js"
 	},
 	
 	"dependencies": {
 		"express": "3.4.x",
 		"jade": "1.1.x",
-		"optimist": "0.6.x"
+		"commander": "2.1.x",
+		"async": "0.2.x",
+		"prompt": "0.2.x",
+		"colors": "0.6.x",
+		"pkginfo": "0.3.x"
 	},
 	
 	"scripts": {

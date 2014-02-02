@@ -5,11 +5,13 @@
 
 var util = require('util');
 var server = require('../lib/bitcd');
-var argv = require('optimist')
-	.describe('port', 'The port to listen on').alias('port', 'p').default('port', process.env.port || 9000)
-	.describe('username', 'Basic auth username').alias('username', 'user')
-	.describe('password', 'Basic auth password').alias('password', 'pass')
-	.argv;
+var api = require('../lib/api');
+var argv = require('commander')
+	.version(api.version)
+	.option('-p, --port <port>', 'The port to listen on', parseInt, process.env.port || 9000)
+	.option('--user, --username <password>', 'Basic auth username')
+	.option('--pass, --password <password>', 'Basic auth password')
+	.parse(process.argv);
 
 var options = {
 	port: argv.port,
