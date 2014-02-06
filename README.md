@@ -15,15 +15,17 @@ Each client has the following options set:
 - The computer name - this cannot be change after the initial setup
 - The computer IP - this is dynamically set with DHCP, and does not change
 - Whether the computer is an admin computer - this gives the computer login access to all other computers, and access to the web interface
-- A username & password pair - the username should be created with the OS installer and the password will be set by the setup script. This is only used for `sudo`
+- A username & password pair - the username should exist (and preferably be a sudoer and the current user) and the password will be set by the setup script. This is only used for `sudo`
 
 ## Commands
 - `bitc setup`: run the initial setup on the system. This is an interactive script.
 	- Flags:
 		- `--server`: set the machine up as the server
-		- `-y|--yes`: automatically answer yes to continuation prompts
+		- `-y|--yes`: skip all prompts and answer yes or the default. This requires `--id` and `--ip` to be present without `--server`
+		- `--id <computer-id>`: automatically set the computer ID to the specified value.
+		- `--ip <computer-ip>`: automatically set the computer IP to the specified value. This must be in the 10.3.14.[5-150] range.
 - `bitc login <computer-id>`: SSH into the specified computer. Note: this requires you to have the universal SSH key.
-- `bitcd`: run the webserver on the server machine.
+- `bitc server`: run the admin dashboard webserver on the server machine.
 	- Flags:
 		- `-p|--port`: specify the port to listen on
 		- `--user|--username`: specify the basic auth username

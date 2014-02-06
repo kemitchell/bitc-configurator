@@ -10,7 +10,9 @@ var fs = require('fs');
 var argv = require('commander')
 	.version(api.version)
 	.option('-s, --server', 'Set up as server')
-	.option('-y, --yes', 'Answer yes to all confirm prompts')
+	.option('-y, --yes', 'Skip all prompts and answer with the default. Without --server, --id and --ip are required')
+	.option('--id <computerid>', 'Set the default computer ID. Most useful with --yes')
+	.option('--ip <computerip>', 'Set the default computer IP. Most useful with --yes')
 	.option('--ascii', 'Show ASCII-art (technically ANSI-art) logo')
 	.parse(process.argv);
 	
@@ -21,21 +23,28 @@ prompt.message = '➥ ';
 prompt.delimiter = '';
 prompt.colors = false;
 
+var options = {
+	isServer: argv.server,
+	yes: argv.yes,
+	'continue': !!argv.yes ? 'Y' : undefined,
+	computerid: argv.id,
+	computerip: argv.ip,
+};
+
 if (argv.yes) {
-	console.log('Are you sure you want to set up this computer [Y/n]? Y');
-	
-	setuputil.setUpComputer(argv.yes, argv.server);
-} else {
-	prompt.get([
-		{
-			name: 'continue',
-			description: 'Are you sure you want to set up this computer [Y/n]?',
-			type: 'string',
-			required: false,
-		}
-	], function(err, result) {
-		if (!result || result.continue != 'Y') process.exit(1);
-		
-		setuputil.setUpComputer(argv.yes, argv.server);
-	});
+	prompt.override = {};
+	for (var key in options) prompt.override[key] = options[key];
 }
+
+prompt.get([
+	{
+		name: 'continue',
+		description: 'Are you sure you want to set up this computer [Y/n]?',
+		type: 'string',
+		required: false,
+	}
+], function(err, result) {
+	if (!result || result.continue != 'Y') process.exit(1);
+
+	setuputil.setUpComputer(options);
+});
