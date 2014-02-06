@@ -8,7 +8,7 @@
 	"main": "./lib/api",
 	"bin": {
 		"bitc": "./bin/bitc.js",
-		"bitcd": "./bin/bitcd.js",
+		"bitc-server": "./bin/bitc-server.js",
 		"bitc-setup": "./bin/bitc-setup.js"
 	},
 	

@@ -7,4 +7,5 @@ var api = require('../lib/api');
 var argv = require('commander')
 	.version(api.version)
 	.command('setup', 'Set up this computer for BITC')
+	.command('server', 'Run the server')
 	.parse(process.argv);

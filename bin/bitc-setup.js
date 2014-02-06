@@ -36,6 +36,6 @@ if (argv.yes) {
 	], function(err, result) {
 		if (!result || result.continue != 'Y') process.exit(1);
 		
-		setuputil.setUpComputer(argv.yes);
+		setuputil.setUpComputer(argv.yes, argv.server);
 	});
 }
