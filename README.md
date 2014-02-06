@@ -25,7 +25,7 @@ Each client has the following options set:
 		- `--server`: set the machine up as the server
 		- `-y|--yes`: skip all prompts and answer yes or the default. This requires `--id` and `--ip` to be present without `--server`
 		- `--id <computer-id>`: automatically set the computer ID to the specified value.
-		- `--ip <computer-ip>`: automatically set the computer IP to the specified value. This must be in the 10.3.14.[5-150] range.
+		- `--ip <computer-ip>`: automatically set the computer IP to the specified value. This must be in the 10.0.0.[5-150] range.
 - `bitc login <computer-id>`: SSH into the specified computer. Note: this requires you to have the universal SSH key.
 - `bitc server`: run the admin dashboard webserver on the server machine.
 	- Flags:
