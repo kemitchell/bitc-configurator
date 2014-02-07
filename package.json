@@ -4,14 +4,12 @@
 	"version": "0.0.1",
 	"description": "BITC computer configuration utility",
 	"author": "Josh Oldenburg",
-	
 	"main": "./lib/api",
 	"bin": {
 		"bitc": "./bin/bitc.js",
 		"bitc-server": "./bin/bitc-server.js",
 		"bitc-setup": "./bin/bitc-setup.js"
 	},
-	
 	"dependencies": {
 		"express": "3.4.x",
 		"jade": "1.1.x",
@@ -20,12 +18,11 @@
 		"prompt": "0.2.x",
 		"colors": "0.6.x",
 		"pkginfo": "0.3.x",
-		"multimeter": "0.1.x"
+		"grunt": "0.4.2",
+		"grunt-mkdir": "~0.1.1",
+		"grunt-shell": "0.6.4"
 	},
-	"devDependencies": {
-		"grunt": "0.4.2"
-	},
-	
+	"devDependencies": {},
 	"scripts": {
 		"test": "echo \"Once upon a time, a developer was lazy and didn't write tests. The end.\" && exit 1"
 	},

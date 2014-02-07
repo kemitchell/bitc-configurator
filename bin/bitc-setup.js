@@ -31,10 +31,8 @@ var options = {
 	computerip: argv.ip,
 };
 
-if (argv.yes) {
-	prompt.override = {};
-	for (var key in options) prompt.override[key] = options[key];
-}
+prompt.override = {};
+for (var key in options) prompt.override[key] = options[key];
 
 setuputil.setUpComputer(options);
 /*prompt.get([
