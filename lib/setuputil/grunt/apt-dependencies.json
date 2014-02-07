@@ -6,5 +6,9 @@
 	"git",
 	"tmux",
 	"openssh-client",
-	"openssh-server"
+	"openssh-server",
+	"ruby1.8",
+	"rubygems",
+	"python",
+	"python3"
 ]
