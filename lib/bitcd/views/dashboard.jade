@@ -1,0 +1,12 @@
+extends layout
+
+block head
+	link(rel='stylesheet', href='/includes/stylesheets/bootstrap-dashboard.css')
+
+block content
+	div.row
+		div.col-sm-3.col-md-2.sidebar
+			ul.nav.nav-sidebar
+				li.active: a(href='/') Dashboard
+		div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+			h1.page-header= nav.items[nav.activepath]
