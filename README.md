@@ -27,6 +27,10 @@ The setup tool installs and configures the following packages with a combination
 - `git`
 - `tmux`
 - `openssh-client` and `openssh-server`
+- `ruby` and `rubygems`
+	- `god` (a gem)
+- `python` and `python3`
+- `wget`
 
 ## Commands
 - `bitc setup`: run the initial setup on the system. This is an interactive script.

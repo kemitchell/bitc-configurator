@@ -10,5 +10,6 @@
 	"ruby1.8",
 	"rubygems",
 	"python",
-	"python3"
+	"python3",
+	"wget"
 ]
