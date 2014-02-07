@@ -19,6 +19,15 @@ Each client has the following options set:
 - Whether the computer is an admin computer - this gives the computer login access to all other computers, and access to the web interface
 - A username & password pair - the username should exist (and preferably be a sudoer and the current user) and the password will be set by the setup script. This is only used for `sudo`
 
+## The Installation
+The setup tool installs and configures the following packages with a combination of apt and other scripts:
+- `nodejs`/`npm`
+- `nano`
+- `less`
+- `git`
+- `tmux`
+- `openssh-client` and `openssh-server`
+
 ## Commands
 - `bitc setup`: run the initial setup on the system. This is an interactive script.
 	- Flags:

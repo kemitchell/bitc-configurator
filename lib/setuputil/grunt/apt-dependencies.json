@@ -1,7 +1,10 @@
 [
-	"node",
+	"nodejs",
 	"npm",
 	"nano",
 	"less",
-	""
+	"git",
+	"tmux",
+	"openssh-client",
+	"openssh-server"
 ]

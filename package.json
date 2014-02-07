@@ -1,7 +1,7 @@
 {
 	"name": "bitc-configurator",
 	"preferGlobal": true,
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "BITC computer configuration utility",
 	"author": "Josh Oldenburg",
 	"main": "./lib/api",
