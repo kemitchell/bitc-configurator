@@ -1,12 +1,25 @@
 extends layout
 
-block head
-	link(rel='stylesheet', href='/includes/stylesheets/bootstrap-dashboard.css')
+mixin dialcollection(dials)
+	div.row.dashboard-dial-collection
+		each dialsettings in dials
+			div.col-xs-6.col-sm-3.dashboard-dial
+				input.dial(type='text', data-min=(dialsettings.min ? dialsettings.min : 0), data-max=dialsettings.max, data-readOnly=(dialsettings.readwrite ? '' : 'true'), value=dialsettings.value)
+				h4= dialsettings.label
+				if dialsettings.sublabel
+					span.text-muted= dialsettings.sublabel
+
+block stylesheets
+	+css('/includes/stylesheets/bootstrap-dashboard.css')
+block javascripts
+	+js('/bower_components/jquery-knob/js/jquery.knob.js')
+	+js('/includes/javascripts/dashboard.js')
 
 block content
 	div.row
 		div.col-sm-3.col-md-2.sidebar
 			ul.nav.nav-sidebar
-				li.active: a(href='/') Dashboard
+				+navitems(dashboard.nav.items, nav.activepath)
 		div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
-			h1.page-header= nav.items[nav.activepath]
+			h1.page-header= dashboard.nav.items[nav.activepath]
+			block dashboardcontent

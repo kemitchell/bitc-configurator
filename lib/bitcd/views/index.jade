@@ -1,6 +1,15 @@
-extends layout
+extends dashboard
 
-block content
-	h1= pagetitle
-	
-	p.lead Welcome to #{pagetitle}
+block dashboardcontent
+	+dialcollection(dashboard.dials)
+	h2.sub-header Computer Status
+	div.table-responsive: table.table.table-striped
+		thead: tr
+			th #
+			th ID
+			th Status
+		tbody
+			tr
+				td 1
+				td MACBOOK-PRO
+				td Error

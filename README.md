@@ -42,10 +42,9 @@ The setup tool installs and configures the following packages with a combination
 		- `-v|--verbose`: show all command output
 - `bitc login <computer-id>`: SSH into the specified computer. Note: this requires you to have the universal SSH key.
 - `bitc server`: run the admin dashboard webserver on the server machine.
-	- Flags:
+	- Flags (note that these are going away once the setup is fully implemented):
 		- `-p|--port`: specify the port to listen on
 		- `--user|--username`: specify the basic auth username
 		- `--pass|--password`: specify the basic auth password
-	
 
 [BITC]: http://example.com
