@@ -19,7 +19,11 @@
 		"async": "0.2.x",
 		"prompt": "0.2.x",
 		"colors": "0.6.x",
-		"pkginfo": "0.3.x"
+		"pkginfo": "0.3.x",
+		"multimeter": "0.1.x"
+	},
+	"devDependencies": {
+		"grunt": "0.4.2"
 	},
 	
 	"scripts": {

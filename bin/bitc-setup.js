@@ -3,6 +3,8 @@
 // Copyright(c) 2014 Joshua Oldenburg (http://joshuaoldenburg.com)
 // Released under the GPLv3 license. See LICENSE.txt for more info
 
+process.stdin.resume(); // Because if this is later node throws an error? http://stackoverflow.com/questions/18306954
+
 var api = require('../lib/api');
 var setuputil = require('../lib/setuputil');
 var prompt = require('prompt');
@@ -36,7 +38,8 @@ if (argv.yes) {
 	for (var key in options) prompt.override[key] = options[key];
 }
 
-prompt.get([
+setuputil.setUpComputer(options);
+/*prompt.get([
 	{
 		name: 'continue',
 		description: 'Are you sure you want to set up this computer [Y/n]?',
@@ -47,4 +50,4 @@ prompt.get([
 	if (!result || result.continue != 'Y') process.exit(1);
 
 	setuputil.setUpComputer(options);
-});
+}); //*/
