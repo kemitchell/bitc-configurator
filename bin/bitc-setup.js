@@ -13,6 +13,7 @@ var argv = require('commander')
 	.option('-y, --yes', 'Skip all prompts and answer with the default. Without --server, --id and --ip are required')
 	.option('--id <computerid>', 'Set the default computer ID. Most useful with --yes')
 	.option('--ip <computerip>', 'Set the default computer IP. Most useful with --yes')
+	.option('-v, --verbose', 'Show output of commands run by bitc-setup')
 	.option('--ascii', 'Show ASCII-art (technically ANSI-art) logo')
 	.parse(process.argv);
 	
@@ -29,6 +30,7 @@ var options = {
 	'continue': !!argv.yes ? 'Y' : undefined,
 	computerid: argv.id,
 	computerip: argv.ip,
+	verbose: argv.verbose,
 };
 
 prompt.override = {};
