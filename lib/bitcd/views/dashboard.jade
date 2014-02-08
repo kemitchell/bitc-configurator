@@ -4,7 +4,7 @@ mixin dialcollection(dials)
 	div.row.dashboard-dial-collection
 		each dialsettings in dials
 			div.col-xs-6.col-sm-3.dashboard-dial
-				input.dial(type='text', data-min=(dialsettings.min ? dialsettings.min : 0), data-max=dialsettings.max, data-readOnly=(dialsettings.readwrite ? '' : 'true'), value=dialsettings.value)
+				input.dial(type='text', data-min=(dialsettings.min ? dialsettings.min : 0), data-max=dialsettings.max, data-readOnly=(dialsettings.readwrite ? '' : 'true'), data-responsive-color=dialsettings.responsiveColor, value=dialsettings.value)
 				h4= dialsettings.label
 				if dialsettings.sublabel
 					span.text-muted= dialsettings.sublabel

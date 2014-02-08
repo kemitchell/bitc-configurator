@@ -40,6 +40,8 @@ html
 		
 		+js('/bower_components/jquery/jquery.min.js')
 		+js('/includes/javascripts/bootstrap.min.js')
+		+js('/includes/javascripts/scripts.js')
+		+js('/includes/stylesheets/less.js?callback=_setLessVariables')
 		block javascripts
 		each scriptsrc in includes.javascripts
 			script(src=scriptsrc)
