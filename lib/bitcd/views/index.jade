@@ -5,11 +5,17 @@ block dashboardcontent
 	h2.sub-header Computer Status
 	div.table-responsive: table.table.table-striped
 		thead: tr
-			th #
+			th IP
 			th ID
 			th Status
+			th Logged In
+			th Actions
 		tbody
 			tr
-				td 1
-				td MACBOOK-PRO
-				td Error
+				td 10.0.0.1
+				td BITC-SERVER
+				td: span.glyphicon.glyphicon-ok
+				td: span.glyphicon.glyphicon-remove
+				td
+					button.btn.btn-danger.btn-sm(type='button'): span.glyphicon.glyphicon-off
+					button.btn.btn-danger.btn-sm(type='button') Self Destruct
