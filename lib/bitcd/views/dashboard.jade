@@ -7,7 +7,7 @@ mixin dialcollection(dials)
 				input.dial(type='text', data-min=(dialsettings.min ? dialsettings.min : 0), data-max=dialsettings.max, data-readOnly=(dialsettings.readwrite ? '' : 'true'), data-responsive-color=dialsettings.responsiveColor, value=dialsettings.value)
 				h4= dialsettings.label
 				if dialsettings.sublabel
-					span.text-muted= dialsettings.sublabel
+					span.text-muted!= dialsettings.sublabel
 
 block stylesheets
 	+css('/includes/stylesheets/bootstrap-dashboard.css')
