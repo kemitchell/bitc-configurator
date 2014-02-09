@@ -1,0 +1,25 @@
+# Added by BITC Configurator (https://github.com/SteinbrennerBlueHats/bitc-configurator)
+# Server sshd_config
+# Loosely based off of default config (from Ubuntu Server 13.10)
+
+Port 22
+Protocol 2
+
+PermitRootLogin no
+PermitEmptyPasswords no
+AuthorizedKeysFile /etc/bitc/ssh/authorized_keys
+HostbasedAuthentication no
+ChallengeResponseAuthentication no
+UsePAM no
+
+PubkeyAuthentication yes # yes on client and server
+PasswordAuthentication yes # yes on server, no on client
+
+X11Forwarding no
+PrintMotd no
+PrintLastLog no
+Banner /etc/bitc/ssh/ssh_banner
+
+AcceptEnv LANG LC_*
+
+Subsystem sftp /usr/lib/openssh/sftp-server

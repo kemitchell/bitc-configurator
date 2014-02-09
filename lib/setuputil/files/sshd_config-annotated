@@ -1,0 +1,107 @@
+# Added by BITC Configurator (https://github.com/SteinbrennerBlueHats/bitc-configurator)
+# Loosely based off of default config (from Ubuntu Server 13.10)
+
+# Summary: The server has password auth and public-key auth. The clients have public-key auth but not password auth. Admin clients (but not the server) have the private key.
+
+# New settings
+Port 22
+Protocol 2
+
+PermitRootLogin no
+PermitEmptyPasswords no
+AuthorizedKeysFile /etc/bitc/ssh/authorized_keys
+HostbasedAuthentication no
+ChallengeResponseAuthentication no
+UsePAM no
+
+PubkeyAuthentication yes # yes on client and server
+PasswordAuthentication yes # yes on server, no on client
+
+#AllowUsers bitc # Disabled b/c it hardcodes the username.
+
+X11Forwarding no
+PrintMotd no
+PrintLastLog no
+Banner /etc/bitc/ssh/ssh_banner
+
+AcceptEnv LANG LC_*
+
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+# /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Original file, with comments
+Port 22 # un - def
+
+Protocol 2
+
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_dsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+
+UsePrivilegeSeparation yes # un - def
+
+KeyRegenerationInterval 3600 # un - 1
+ServerKeyBits 768 # un - 1
+
+SyslogFacility AUTH # un - def
+LogLevel INFO # un - def
+
+LoginGraceTime 120 # un - def
+PermitRootLogin yes # note, un - def
+StrictModes yes # un - def
+
+RSAAuthentication yes # un - 1
+PubbkeyAuthentication yes # note, un - def
+#AuthorizedKeysFile %h/.ssh/authorized_keys
+
+IgnoreRhosts yes # un - def
+RhostsRSAAuthentication no # un - def - 1
+HostbasedAuthentication no # un - def
+
+PermitEmptyPasswords no # un - def
+
+ChallengeResponseAuthentication no # note, orig != def
+
+#PasswordAuthentication yes # note, def, in original commented out
+
+X11Forwarding yes # note, orig != def
+X11DisplayOffset 10 # un - def
+PrintMotd no # note, orig != def
+PrintLastLog yes # note
+TCPKeepAlive yes # un - def
+#UseLogin no # note
+
+#MaxStartups 10:30:60 # note
+#Banner /etc/issue.net # note
+
+AcceptEnv LANG LC_*
+
+Subsystem sftp /usr/lib/openssh/sftp-server # note
+
+UsePAM yes # note
+
+# /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Original settings, without anything set as default
+Protocol 2
+
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_dsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+
+#AuthorizedKeysFile %h/.ssh/authorized_keys
+
+ChallengeResponseAuthentication no # note, orig != def
+
+X11Forwarding yes # note, orig != def
+PrintMotd no # note, orig != def
+PrintLastLog yes # note
+#UseLogin no # note
+
+#MaxStartups 10:30:60 # note
+#Banner /etc/issue.net # note
+
+AcceptEnv LANG LC_*
+
+Subsystem sftp /usr/lib/openssh/sftp-server # note
+
+UsePAM yes # note
