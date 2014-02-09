@@ -16,7 +16,7 @@ BITC Configurator stores all of its configuration in `/etc/bitc` in various json
 	    "isAdmin": false
 	}
 
-### `/etc/bitc/10.0.0.x.json`:
+### `/etc/bitc/computers/10.0.0.x.json`:
 (Only on server)
 	
 	{
