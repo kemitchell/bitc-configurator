@@ -21,15 +21,15 @@ Current:
 		- `log:gem:end`
 	- `bitc:god`
 		- `log:god:start`
-		- `bitc:setup:god` - ✘
+		- `bitc:setup:god`
 		- `log:god:end`
 	- `bitc:ssh`
 		- `log:ssh:start`
-		- `bitc:setup:ssh` - ✘
+		- `bitc:setup:ssh`
 		- `log:ssh:end`
 	- `bitc:custom`
 		- `log:bitc:start`
-		- `bitc:setup:server` on server, or `bitc:setup:client` on client - ✘
+		- `bitc:setup:server` on server, or `bitc:setup:client` on client
 		- `log:bitc:end`
 	- `log:end`
 
