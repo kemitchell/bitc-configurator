@@ -1,0 +1,16 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The Internet - this has been disabled by bitc-configurator
+# auto eth0
+# iface eth0 inet dhcp
+
+# The BITC Intranet - this has been enabled by bitc-configurator
+auto eth0
+iface eth0 inet static
+	address <%= conf.ip %>
+	netmask 255.255.254.0
