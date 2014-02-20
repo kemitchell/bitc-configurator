@@ -17,7 +17,7 @@ UsePAM no
 PubkeyAuthentication yes # yes on client and server
 PasswordAuthentication yes # yes on server, no on client
 
-#AllowUsers bitc # Disabled b/c it hardcodes the username.
+AllowUsers <%= conf.username %>
 
 X11Forwarding no
 PrintMotd no

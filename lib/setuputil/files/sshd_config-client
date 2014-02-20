@@ -15,6 +15,8 @@ UsePAM no
 PubkeyAuthentication yes # yes on client and server
 PasswordAuthentication no # yes on server, no on client
 
+AllowUsers <%= conf.username %>
+
 X11Forwarding no
 PrintMotd no
 PrintLastLog no
