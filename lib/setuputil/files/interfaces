@@ -5,12 +5,16 @@
 auto lo
 iface lo inet loopback
 
-# The Internet - this has been disabled by bitc-configurator
-# auto eth0
-# iface eth0 inet dhcp
+#########################
+# Added by bitc-configurator (https://github.com/steinbrennerbluehats/bitc-configurator/) on <%= grunt.template.today('mmmm dS, yyyy "at" h:MM:ss TT') %>
+#########################
 
-# The BITC Intranet - this has been enabled by bitc-configurator
-auto eth0
-iface eth0 inet static
+auto eth0-bitc
+
+# The Internet
+iface eth0-dchp inet dhcp
+
+# The BITC Intranet
+iface eth0-bitc inet static
 	address <%= conf.ip %>
 	netmask 255.255.254.0
