@@ -11,59 +11,12 @@ block dashboardcontent
 			th Logged In
 			th Actions
 		tbody
-			tr
-				td 10.0.0.1
-				td BITC-SERVER
-				td: span.glyphicon.glyphicon-ok
-				td: span.glyphicon.glyphicon-remove
-				td
-					button.btn.btn-danger.btn-sm(type='button'): span.glyphicon.glyphicon-off
-					button.btn.btn-danger.btn-sm(type='button') Self Destruct
-			tr
-				td 10.0.0.5
-				td BITC-CLIENT1
-				td: span.glyphicon.glyphicon-ok
-				td: span.glyphicon.glyphicon-ok
-				td
-					button.btn.btn-danger.btn-sm(type='button'): span.glyphicon.glyphicon-off
-					button.btn.btn-danger.btn-sm(type='button') Self Destruct
-			tr
-				td 10.0.0.6
-				td BITC-CLIENT2
-				td: span.glyphicon.glyphicon-ok
-				td: span.glyphicon.glyphicon-ok
-				td
-					button.btn.btn-danger.btn-sm(type='button'): span.glyphicon.glyphicon-off
-					button.btn.btn-danger.btn-sm(type='button') Self Destruct
-			tr
-				td 10.0.0.7
-				td BITC-CLIENT3
-				td: span.glyphicon.glyphicon-remove
-				td: span.glyphicon.glyphicon-remove
-				td
-					button.btn.btn-danger.btn-sm(type='button'): span.glyphicon.glyphicon-off
-					button.btn.btn-danger.btn-sm(type='button') Self Destruct
-			tr
-				td 10.0.0.101
-				td BITC-ADMIN1
-				td: span.glyphicon.glyphicon-ok
-				td: span.glyphicon.glyphicon-remove
-				td
-					button.btn.btn-danger.btn-sm(type='button'): span.glyphicon.glyphicon-off
-					button.btn.btn-danger.btn-sm(type='button') Self Destruct
-			tr
-				td 10.0.0.102
-				td BITC-ADMIN2
-				td: span.glyphicon.glyphicon-remove
-				td: span.glyphicon.glyphicon-remove
-				td
-					button.btn.btn-danger.btn-sm(type='button'): span.glyphicon.glyphicon-off
-					button.btn.btn-danger.btn-sm(type='button') Self Destruct
-			tr
-				td 10.0.1.7
-				td {unknown}
-				td: span.glyphicon.glyphicon-ok
-				td: span.glyphicon.glyphicon-remove
-				td
-					button.btn.btn-danger.btn-sm.disabled(type='button'): span.glyphicon.glyphicon-off
-					button.btn.btn-danger.btn-sm.disabled(type='button') Self Destruct
+			each computerInfo in dashboard.computers
+				tr
+					td= computerInfo.computerIP
+					td= computerInfo.computerID
+					td: span.glyphicon.glyphicon-ok
+					td: span.glyphicon.glyphicon-remove
+					td
+						button.btn.btn-danger.btn-sm(type='button'): span.glyphicon.glyphicon-off
+						button.btn.btn-danger.btn-sm(type='button') Self Destruct
