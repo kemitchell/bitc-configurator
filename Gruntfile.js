@@ -6,10 +6,15 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		
+
 		trimtrailingspaces: {
 			main: {
-				src: ['./**/*.{js,jade,json,god}'],
+				src: [
+					'./**/*.{js,jade,json,god}',
+					'!./node_modules/**',
+					'!./**/*bootstrap*.{js,css,json}',
+					'!./**/bower_components/**',
+				],
 				options: {
 					filter: 'isFile',
 					encoding: 'utf8',
