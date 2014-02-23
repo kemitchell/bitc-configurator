@@ -1,0 +1,20 @@
+{
+	"env": {
+		"node": true
+	},
+	"rules": {
+		"eqeqeq": false,
+		"no-global-strict": true,
+		"strict": false,
+		"semi": true,
+		"brace-style": true,
+		"curly": 2,
+		"no-comma-dangle": false,
+		"no-underscore-dangle": false,
+		"no-ternary": false,
+		"quotes": [
+			"2",
+			"multi"
+		]
+	}
+}
