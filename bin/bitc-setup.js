@@ -16,7 +16,7 @@ var argv = require('commander')
 	.option('-v, --verbose', 'Show output of commands run by bitc-setup')
 	.option('--ascii', 'Show ASCII-art (technically ANSI-art) logo')
 	.parse(process.argv);
-	
+
 if (argv.ascii) console.log(fs.readFileSync(require.resolve('../ascii-art.txt'), { encoding: 'utf8' }));
 
 prompt.start();

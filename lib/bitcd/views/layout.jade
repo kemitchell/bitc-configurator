@@ -12,9 +12,9 @@ html
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
-		
+
 		title= pagetitle
-		
+
 		+css('/includes/stylesheets/bootstrap.min.css')
 		+css('/includes/stylesheets/bootstrap-theme.min.css')
 		+css('/includes/stylesheets/style.css')
@@ -37,7 +37,7 @@ html
 					+navitems(nav.items, nav.activepath)
 		div.container-fluid
 			block content
-		
+
 		+js('/bower_components/jquery/jquery.min.js')
 		+js('/includes/javascripts/bootstrap.min.js')
 		+js('/includes/javascripts/scripts.js')

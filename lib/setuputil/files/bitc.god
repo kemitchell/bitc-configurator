@@ -6,10 +6,10 @@ God.watch do |w|
 	w.name = 'bitcd'
 	w.start = 'bitc-server'
 	w.keepalive(:memory_max => 150.megabytes, :cpu_max => 50.percent)
-	
+
 	w.uid = 'root'
 	w.dir = '/etc/bitc'
-	
+
 	w.env = {
 		'NODE_ENV' => 'production',
 	}
