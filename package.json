@@ -24,7 +24,9 @@
 		"request": "2.33.x",
 		"underscore": "1.6.x"
 	},
-	"devDependencies": {},
+	"devDependencies": {
+		"grunt-trimtrailingspaces": "0.4.x"
+	},
 	"scripts": {
 		"test": "echo \"Once upon a time, a developer was lazy and didn't write tests. The end.\" && exit 1"
 	},
