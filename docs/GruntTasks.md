@@ -17,7 +17,6 @@ BITC Configurator - Grunt Tasks
 		- `bitc:fixnode:removeaptnpm` - `sudo apt-get remove -y npm` (alias to `shell:aptremovenpm`)
 		- `bitc:fixnode:installnpm` - `sudo npm install --global npm n` (using a package.json dependency version which apt won't remove)
 		- `bitc:fixnode:installnode` - `sudo n latest`
-		- `bitc:fixnode:removeaptnode` - `sudo apt-get remove -y nodejs` (alias to `shell:aptremovenode`)
 	- `bitc:switchnetwork` - prompt user to switch to the BITC intranet, then set up new network
 	- `bitc:god` - set up [god][]
 		- `bitc:setup:god` - perform setup
@@ -26,6 +25,8 @@ BITC Configurator - Grunt Tasks
 	- `bitc:custom` - communicate with (or set up) the BITC server
 		- `bitc:setup:shared` - set up things like tmux which are present on both client and server
 		- `bitc:setup:server` on server, or `bitc:setup:client` on client - register computer, setup daemon, ...
+	- `bitc:fixnode:preexit` - run just before exiting because it modifies the binary running the setup script, which could potentially be troublesome
+		- `bitc:fixnode:removeaptnode` - `sudo apt-get remove -y nodejs` (alias to `shell:aptremovenode`)
 
 [Grunt]: http://gruntjs.com
 [god]: http://godrb.com
