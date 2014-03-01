@@ -6,7 +6,5 @@
 var api = require('../lib/api');
 var argv = require('commander')
 	.version(api.version)
-	.command('setup', 'Set up this computer for BITC')
-	.command('server', 'Run the server')
-	.command('_private', 'Utilized by various scripts, but shouldn\'t be run manually')
+	.command('tmux-status-right', 'Get the text that shows up on the right side of tmux status bar')
 	.parse(process.argv);
