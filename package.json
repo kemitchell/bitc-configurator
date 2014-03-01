@@ -30,7 +30,9 @@
 
 		"request": "2.33.x",
 
-		"underscore": "1.6.x"
+		"underscore": "1.6.x",
+
+		"npm": "1.4.x"
 	},
 	"devDependencies": {
 		"grunt-trimtrailingspaces": "0.4.x",
