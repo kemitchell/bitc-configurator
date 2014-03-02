@@ -44,4 +44,4 @@ html
 		+js('/includes/stylesheets/less.js?callback=_setLessVariables')
 		block javascripts
 		each scriptsrc in includes.javascripts
-			script(src=scriptsrc)
+			+js(scriptsrc)
