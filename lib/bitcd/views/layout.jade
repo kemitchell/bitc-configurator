@@ -15,8 +15,8 @@ html
 
 		title= pagetitle
 
-		+css('/includes/stylesheets/bootstrap.min.css')
-		+css('/includes/stylesheets/bootstrap-theme.min.css')
+		+css('/bower_components/bootstrap/dist/css/bootstrap.min.css')
+		+css('/bower_components/bootstrap/dist/css/bootstrap-theme.min.css')
 		+css('/includes/stylesheets/style.css')
 		block stylesheets
 		each linkhref in includes.stylesheets
@@ -38,10 +38,10 @@ html
 		div.container-fluid
 			block content
 
-		+js('/bower_components/jquery/jquery.min.js')
-		+js('/includes/javascripts/bootstrap.min.js')
+		+js('/bower_components/jquery/dist/jquery.min.js')
+		+js('/bower_components/bootstrap/dist/js/bootstrap.min.js')
 		+js('/includes/javascripts/scripts.js')
 		+js('/includes/stylesheets/less.js?callback=_setLessVariables')
 		block javascripts
 		each scriptsrc in includes.javascripts
-			script(src=scriptsrc)
+			+js(scriptsrc)

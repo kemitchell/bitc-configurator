@@ -1,3 +1,8 @@
-{
-	"/": "Overview"
-}
+[
+	{
+		"/": "Overview"
+	},
+	{
+		"/help": "Help"
+	}
+]
