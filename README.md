@@ -48,10 +48,7 @@ The setup tool installs and configures the following packages with a combination
 		- `--ip <computer-ip>`: automatically set the computer IP to the specified value. This must be in the 10.0.0.[5-150] range.
 		- `-v|--verbose`: show all command output
 - `bitc login <computer-id>`: SSH into the specified computer. Note: this requires you to have the universal SSH key (i.e. be registered as an admin).
-- `bitc server`: run the admin dashboard webserver on the server machine.
-	- Flags (note that these are going away once the setup is fully implemented):
-		- `-p|--port`: specify the port to listen on
-		- `--user|--username`: specify the basic auth username
-		- `--pass|--password`: specify the basic auth password
+- `bitc server`: run the admin dashboard webserver on the server machine, or on the client connects to the server to keep the server up to date on status
+- `bitc _private`: used by miscellaneous utils and is not for human consumption
 
 [BITC]: http://example.com
