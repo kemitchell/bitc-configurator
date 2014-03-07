@@ -5,7 +5,6 @@ BITC Configurator - Grunt Tasks
 
 The '✘' specifies that the task is not yet implemented.
 
-New:
 - `bitc:setup` - umbrella task for `bitc setup`
 	- `bitc:apt` - update/upgrade/install packages with apt
 		- `shell:aptupdate`
@@ -21,6 +20,21 @@ New:
 		- `bitc:setup:ssh`
 	- `bitc:custom` - communicate with (or set up) the BITC server
 		- `bitc:setup:server` on server, or `bitc:setup:client` on client
+
+## List of all tasks, with descriptions:
+### Umbrella tasks
+- `bitc:setup` - performs computer setup
+- `bitc:apt` - run `shell:aptaddchromerepo`, `shell:aptupdate`, `shell:aptupgrade`, `shell:aptinstall`, and `shell:aptremove`
+- `bitc:gem` - run `shell:gemupdate` and `shell:geminstall`
+
+### Subtasks
+- `shell:aptchromerepo` - adds the apt repo for Google Chrome
+- `shell:aptupdate` - runs `apt-get update`
+- `shell:aptupgrade` - runs `apt-get upgrade`
+- `shell:aptinstall` - runs `apt-get install -y ...`
+- `shell:aptremove` - runs `apt-get remove -y ...`
+- `shell:gemupdate` - runs `gem update`
+- `shell:geminstall` - runs `gem install ...`
 
 [Grunt]: http://gruntjs.com
 [god]: http://godrb.com
