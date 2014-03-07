@@ -15,9 +15,8 @@ The '✘' specifies that the task is not yet implemented.
 		- `shell:geminstall`
 	- `bitc:switchnetwork` - prompt user to switch to the BITC intranet
 	- `bitc:god` - set up [god][]
-		- `bitc:setup:god`
 	- `bitc:ssh` - set up SSH and sshd
-		- `bitc:setup:ssh`
+  - `bitc:tmux` - set up tmux
 	- `bitc:custom` - communicate with (or set up) the BITC server
 		- `bitc:setup:server` on server, or `bitc:setup:client` on client
 
