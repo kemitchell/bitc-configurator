@@ -10,3 +10,5 @@ var argv = require('commander')
 	.command('server', 'Run the server')
 	.command('_private', 'Utilized by various scripts, but shouldn\'t be run manually')
 	.parse(process.argv);
+
+if (process.argv.length == 2) console.error('Error: no command specified!');

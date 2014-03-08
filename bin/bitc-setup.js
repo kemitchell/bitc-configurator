@@ -13,8 +13,12 @@ var argv = require('commander')
 	.option('-y, --yes', 'Skip all prompts and answer with the default. Without --server, --id and --ip are required')
 	.option('--id <computerid>', 'Set the default computer ID. Most useful with --yes')
 	.option('--ip <computerip>', 'Set the default computer IP. Most useful with --yes')
-	.option('-v, --verbose', 'Show output of commands run by bitc-setup')
-	.option('--ascii', 'Show ASCII-art (technically ANSI-art) logo')
+	.option('-a, --admin', 'Register the computer as an admin')
+	.option('-v, --verbose', 'Show verbose output')
+
+	.option('-c, --continue', 'Run all tasks after the network switching. You must be on the private network to use this. (Useful to skip the package manager commands)')
+
+	// .option('--ascii', 'Show ASCII-art (technically ANSI-art) logo')
 	.parse(process.argv);
 
 if (argv.ascii) console.log(fs.readFileSync(require.resolve('../ascii-art.txt'), { encoding: 'utf8' }));
@@ -24,28 +28,25 @@ prompt.message = '➥ ';
 prompt.delimiter = '';
 prompt.colors = false;
 
-var options = {
-	isServer: argv.server,
-	yes: argv.yes,
-	'continue': !!argv.yes ? 'Y' : undefined,
-	computerid: argv.id,
-	computerip: argv.ip,
-	verbose: argv.verbose,
-};
+var options = {};
+if (argv.continue) {
+	options = api.thisComputer;
+	options.verbose = argv.verbose;
+	options.intranetOnly = true;
+} else {
+	options = {
+		isServer: argv.server,
+		yes: argv.yes,
+		'continue': !!argv.yes ? 'Y' : undefined,
+		computerID: argv.id,
+		computerIP: argv.ip,
+		isAdmin: argv.admin,
+		verbose: argv.verbose,
+		intranetOnly: false,
+	};
+}
 
 prompt.override = {};
 for (var key in options) prompt.override[key] = options[key];
 
 setuputil.setUpComputer(options);
-/*prompt.get([
-	{
-		name: 'continue',
-		description: 'Are you sure you want to set up this computer [Y/n]?',
-		type: 'string',
-		required: false,
-	}
-], function(err, result) {
-	if (!result || result.continue != 'Y') process.exit(1);
-
-	setuputil.setUpComputer(options);
-}); //*/
