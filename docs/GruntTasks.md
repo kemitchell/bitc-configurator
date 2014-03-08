@@ -32,8 +32,9 @@ BITC Configurator - Grunt Tasks
 ## List of all tasks, with descriptions:
 ### Umbrella tasks
 - `bitc:setup` - performs computer setup
-- `bitc:apt` - run `shell:aptaddchromerepo`, `shell:aptupdate`, `shell:aptupgrade`, `shell:aptinstall`, and `shell:aptremove`
-- `bitc:gem` - run `shell:gemupdate` and `shell:geminstall`
+- `bitc:apt` - runs `shell:aptaddchromerepo`, `shell:aptupdate`, `shell:aptupgrade`, `shell:aptinstall`, and `shell:aptremove`
+- `bitc:gem` - runs `shell:gemupdate` and `shell:geminstall`
+- `bitc:fixnode` - runs `bitc:fixnode:removeaptnpm`, `bitc:fixnode:installnpm`, and `bitc:fixnode:installnode`,
 
 ### Subtasks
 - `shell:aptchromerepo` - adds the apt repo for Google Chrome
