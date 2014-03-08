@@ -1,0 +1,10 @@
+{
+	"/com/canonical/unity/launcher/favorites": "['unity://expo-icon', 'unity://devices', 'application://nautilus.desktop', 'application://google-chrome.desktop', 'application://gnome-terminal.desktop', 'unity://running-apps']",
+	"/org/gnome/desktop/lockdown/disable-lock-screen": true,
+	"/org/gnome/desktop/screensaver/lock-enabled": false,
+	"/org/gnome/desktop/screensaver/ubuntu-lock-on-suspend": false,
+	"/org/gnome/desktop/screensaver/user-switch-enabled": false,
+	"/org/gnome/desktop/search-providers/disable-external": true,
+	"/org/gnome/desktop/session/idle-delay": 3600,
+	"/com/ubuntu/update-notifier/no-show-notifications": true
+}
