@@ -51,5 +51,6 @@ for (var key in options) {
 	if (key != 'isAdmin' && key != 'isServer') prompt.override[key] = options[key];
 	else prompt.override[key] = options[key] ? 'Y' : 'n';
 }
+prompt.override['passwordconfirm'] = prompt.override['password'];
 
 setuputil.setUpComputer(options);
