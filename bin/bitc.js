@@ -9,8 +9,8 @@ var cmd = require('commander').version(api.version);
 cmd.command('setup', 'Set up this computer for BITC');
 cmd.command('server', 'Run the server');
 
-cmd.command('internet', 'Switch the network config to the World Wide Web').action(_gruntAsRoot('bitc:switchnetwork:internet'));
-cmd.command('intranet', 'Switch the network config to the private network').action(_gruntAsRoot('bitc:switchnetwork:intranet'));
+cmd.command('internet').description('Switch the network config to the World Wide Web').action(_gruntAsRoot('bitc:switchnetwork:internet'));
+cmd.command('intranet').description('Switch the network config to the private network').action(_gruntAsRoot('bitc:switchnetwork:intranet'));
 
 cmd.command('_private', 'Utilized by various scripts, but shouldn\'t be run manually');
 
@@ -23,7 +23,7 @@ if (process.argv.length == 2) {
 
 function _gruntAsRoot(task) {
 	return function() {
-		if (process.getuid() == 0) {
+		if (process.getuid() != 0) {
 			console.error('This must be run as root!');
 			process.exit(1);
 		}
