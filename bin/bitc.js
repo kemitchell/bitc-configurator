@@ -4,11 +4,31 @@
 // Released under the GPLv3 license. See LICENSE.txt for more info
 
 var api = require('../lib/api');
-var argv = require('commander')
-	.version(api.version)
-	.command('setup', 'Set up this computer for BITC')
-	.command('server', 'Run the server')
-	.command('_private', 'Utilized by various scripts, but shouldn\'t be run manually')
-	.parse(process.argv);
+var cmd = require('commander').version(api.version);
 
-if (process.argv.length == 2) console.error('Error: no command specified!');
+cmd.command('setup', 'Set up this computer for BITC');
+cmd.command('server', 'Run the server');
+
+cmd.command('internet', 'Switch the network config to the World Wide Web').action(_gruntAsRoot('bitc:switchnetwork:internet'));
+cmd.command('intranet', 'Switch the network config to the private network').action(_gruntAsRoot('bitc:switchnetwork:intranet'));
+
+cmd.command('_private', 'Utilized by various scripts, but shouldn\'t be run manually');
+
+var argv = cmd.parse(process.argv);
+
+if (process.argv.length == 2) {
+	console.error('Error: no command specified!');
+	process.exit(1);
+}
+
+function _gruntAsRoot(task) {
+	return function() {
+		if (process.getuid() == 0) {
+			console.error('This must be run as root!');
+			process.exit(1);
+		}
+
+		api.runGruntTask(task);
+		process.exit(0);
+	};
+}

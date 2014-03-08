@@ -4,7 +4,8 @@
 // Released under the GPLv3 license. See LICENSE.txt for more info
 
 var api = require('../lib/api');
-var argv = require('commander')
-	.version(api.version)
-	.command('tmux-status-right', 'Get the text that shows up on the right side of tmux status bar')
-	.parse(process.argv);
+var cmd = require('commander').version(api.version);
+
+cmd.command('tmux-status-right', 'Get the text that shows up on the right side of tmux status bar');
+
+var argv = cmd.parse(process.argv);
