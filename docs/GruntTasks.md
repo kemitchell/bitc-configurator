@@ -22,11 +22,27 @@ BITC Configurator - Grunt Tasks
 		- `bitc:setup:god` - perform setup
 	- `bitc:ssh` - set up SSH and sshd
 		- `bitc:setup:ssh` - perform setup
+  - `bitc:tmux` - set up tmux
 	- `bitc:custom` - communicate with (or set up) the BITC server
 		- `bitc:setup:shared` - set up things like tmux which are present on both client and server
 		- `bitc:setup:server` on server, or `bitc:setup:client` on client - register computer, setup daemon, ...
 	- `bitc:fixnode:preexit` - run just before exiting because it modifies the binary running the setup script, which could potentially be troublesome
 		- `bitc:fixnode:removeaptnode` - `sudo apt-get remove -y nodejs` (alias to `shell:aptremovenode`)
+
+## List of all tasks, with descriptions:
+### Umbrella tasks
+- `bitc:setup` - performs computer setup
+- `bitc:apt` - run `shell:aptaddchromerepo`, `shell:aptupdate`, `shell:aptupgrade`, `shell:aptinstall`, and `shell:aptremove`
+- `bitc:gem` - run `shell:gemupdate` and `shell:geminstall`
+
+### Subtasks
+- `shell:aptchromerepo` - adds the apt repo for Google Chrome
+- `shell:aptupdate` - runs `apt-get update`
+- `shell:aptupgrade` - runs `apt-get upgrade`
+- `shell:aptinstall` - runs `apt-get install -y ...`
+- `shell:aptremove` - runs `apt-get remove -y ...`
+- `shell:gemupdate` - runs `gem update`
+- `shell:geminstall` - runs `gem install ...`
 
 [Grunt]: http://gruntjs.com
 [god]: http://godrb.com
