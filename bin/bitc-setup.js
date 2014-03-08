@@ -47,6 +47,9 @@ if (argv.continue) {
 }
 
 prompt.override = {};
-for (var key in options) prompt.override[key] = options[key];
+for (var key in options) {
+	if (key != 'isAdmin' && key != 'isServer') prompt.override[key] = options[key];
+	else prompt.override[key] = options[key] ? 'Y' : 'n';
+}
 
 setuputil.setUpComputer(options);
