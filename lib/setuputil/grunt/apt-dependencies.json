@@ -9,5 +9,6 @@
 	"rubygems",
 	"python",
 	"python3",
-	"wget"
+	"wget",
+	"curl"
 ]
