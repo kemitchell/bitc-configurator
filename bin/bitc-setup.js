@@ -20,6 +20,17 @@ cmd.option('-c, --continue', 'Run all tasks after the network switching. You mus
 // cmd.option('--ascii', 'Show ASCII-art (technically ANSI-art) logo');
 
 cmd.command('desktop').description('Configure some miscellaneous Ubuntu Desktop things, such as the launcer and disabling autolock').action(function() {
+	if (process.getuid() == 0) {
+		console.error('This cannot be run as root!');
+		process.exit(1);
+		return;
+	}
+	if (!api.thisComputer.registered) {
+		console.error('You must run `sudo bitc setup` before `bitc setup desktop`!');
+		process.exit(1);
+		return;
+	}
+
 	api.runGruntTask('bitc:dconf');
 	process.exit(0);
 });

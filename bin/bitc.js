@@ -26,6 +26,7 @@ function _gruntAsRoot(task) {
 		if (process.getuid() != 0) {
 			console.error('This must be run as root!');
 			process.exit(1);
+			return;
 		}
 
 		api.runGruntTask(task);
