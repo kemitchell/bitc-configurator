@@ -20,7 +20,7 @@ cmd.option('-c, --continue', 'Run all tasks after the network switching. You mus
 // cmd.option('--ascii', 'Show ASCII-art (technically ANSI-art) logo');
 
 cmd.command('desktop').description('Configure some miscellaneous Ubuntu Desktop things, such as the launcer and disabling autolock').action(function() {
-	api.runGruntTask('bitc:dconf', argv.verbose);
+	api.runGruntTask('bitc:dconf');
 	process.exit(0);
 });
 
