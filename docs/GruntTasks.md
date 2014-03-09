@@ -28,6 +28,7 @@ BITC Configurator - Grunt Tasks
 	- `bitc:ssh` - set up SSH and sshd
 	- `bitc:tmux` - set up tmux
 	- `bitc:lightdm` - set up lightdm
+	- `bitc:mutevolume` - mute speakers
 
 ## List of all tasks, with descriptions:
 ### Umbrella tasks
@@ -54,6 +55,7 @@ BITC Configurator - Grunt Tasks
 - `bitc:god` - set up [god][] (the daemon runner)
 - `bitc:ssh` - set up SSH and the SSH daemon
 - `bitc:lightdm` - set up lightdm (the login manager) for things like disabling the guest user and setting up autologin
+- `bitc:mutevolume` - mutes speakers by running `amixer -D pulse sset Master mute`
 - `bitc:setup:server` - sets up the server
 - `bitc:setup:client` - registers the client with the server
 - `bitc:setup:shared` - currently a no-op
