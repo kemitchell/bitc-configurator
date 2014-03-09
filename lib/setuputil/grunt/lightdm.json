@@ -1,0 +1,6 @@
+{
+	"--hide-users": "false",
+	"--show-remote-login": "false",
+	"--allow-guest": "false",
+	"--autologin": "<% conf.username %>"
+}
