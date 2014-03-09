@@ -7,7 +7,7 @@ var api = require('../lib/api');
 var setuputil = require('../lib/setuputil');
 var prompt = require('prompt');
 var fs = require('fs');
-var argv = require('commander')
+var cmd = require('commander')
 	.version(api.version)
 	.option('-s, --server', 'Set up as server')
 	.option('-y, --yes', 'Skip all prompts and answer with the default. Without --server, --id and --ip are required')
@@ -19,7 +19,13 @@ var argv = require('commander')
 	.option('-c, --continue', 'Run all tasks after the network switching. You must be on the private network to use this. (Useful to skip the package manager commands)')
 
 	// .option('--ascii', 'Show ASCII-art (technically ANSI-art) logo')
-	.parse(process.argv);
+
+cmd.command('desktop', 'Configure some miscellaneous Ubuntu Desktop things, such as the launcer and disabling autolock').action(function() {
+	api.runGruntTask('bitc:dconf', argv.verbose);
+	process.exit(0);
+});
+
+var argv = cmd.parse(process.argv);
 
 if (argv.ascii) console.log(fs.readFileSync(require.resolve('../ascii-art.txt'), { encoding: 'utf8' }));
 
