@@ -6,6 +6,9 @@
 var api = require('../lib/api');
 var cmd = require('commander').version(api.version);
 
-cmd.command('tmux-status-right', 'Get the text that shows up on the right side of tmux status bar');
+cmd.command('tmux-status-right').description('Get the text that shows up on the right side of tmux status bar').action(function() {
+	console.log(api.thisComputer.computerID + ' | ' + api.thisComputer.computerIP);
+	process.exit(0);
+});
 
 var argv = cmd.parse(process.argv);
