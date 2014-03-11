@@ -10,6 +10,8 @@
 		"bitc-server": "./bin/bitc-server.js",
 		"bitc-setup": "./bin/bitc-setup.js",
 
+		"bitc-login": "./bin/bitc-login.js",
+
 		"bitc-_private": "./bin/bitc-_private.js",
 		"bitc-_private-tmux-status-right": "./bin/bitc-_private-tmux-status-right.js"
 	},
