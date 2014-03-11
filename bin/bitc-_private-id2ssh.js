@@ -23,6 +23,7 @@ if (!api.thisComputer.isAdmin) {
 
 request('http://10.0.0.1/api/1/computers/byID', {
 	json: true,
+	timeout: 10000,
 }, function(error, response, body) {
 	if (error || response.statusCode == 200 || body.error) {
 		console.error('Error: failed to load computers');
@@ -36,6 +37,8 @@ request('http://10.0.0.1/api/1/computers/byID', {
 		return;
 	}
 
-	console.log(body[computerID].computerIP);
+	var config = body[computerID];
+
+	console.log('ssh ' + config.username + '@' + config.computerIP);
 	process.exit(0);
 });

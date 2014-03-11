@@ -7,5 +7,6 @@ var api = require('../lib/api');
 var cmd = require('commander').version(api.version);
 
 cmd.command('tmux-status-right', 'Get the text that shows up on the right side of tmux status bar');
+cmd.command('id2ssh', 'Get the SSH command to log into a specific computer');
 
 var argv = cmd.parse(process.argv);
