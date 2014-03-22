@@ -5,10 +5,26 @@
 
 var api = require('../lib/api');
 var cmd = require('commander').version(api.version);
+var _ = require('underscore');
 
 cmd.command('tmux-status-right').description('Get the text that shows up on the right side of tmux status bar').action(function() {
 	console.log(api.thisComputer.computerID + ' | ' + api.thisComputer.computerIP);
 	process.exit(0);
 });
+
+cmd.command('grunt').description('Run a specific grunt task (from the setup Gruntfile)')
+	.option('-v, --verbose', 'Make grunt run verbosely')
+	.action(function() {
+		var verbose = !!(_.last(arguments).verbose);
+		var task = arguments[0];
+		if (!_.isString(task)) {
+			console.error('Error: you must specify a task!');
+			process.exit(1);
+			return;
+		}
+
+		api.runGruntTask(task, verbose);
+		process.exit(0);
+	});
 
 var argv = cmd.parse(process.argv);
